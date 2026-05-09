@@ -101,12 +101,15 @@ See [docs/USER_FLOWS.md](docs/USER_FLOWS.md) for sequence diagrams showing what 
 ## Demo Videos
 
 **Interactive Feature with Graph-Viz**
+
 [![Interactive Feature with Graph-Viz](https://img.youtube.com/vi/yOSfUFT_7I0/hqdefault.jpg)](https://youtu.be/yOSfUFT_7I0)
 
 **Building Graph and Snapshot with Graph-Viz**
+
 [![Building Graph and Snapshot with Graph-Viz](https://img.youtube.com/vi/4s8BYksYvaw/hqdefault.jpg)](https://youtu.be/4s8BYksYvaw)
 
 **Masking and Validation**
+
 [![Masking and Validation](https://img.youtube.com/vi/kBvvDgUP8GY/hqdefault.jpg)](https://youtu.be/kBvvDgUP8GY)
 
 ---
