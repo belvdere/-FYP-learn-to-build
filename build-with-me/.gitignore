@@ -1,0 +1,33 @@
+# Build outputs
+out/
+dist/
+*.vsix
+
+# Generated vendor assets (built via pnpm run build:ace)
+webview/vendor/
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode-test/
+.vscode-test-web/
+
+# OS
+.DS_Store
+*.log
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment
+.env
+.env.local
+

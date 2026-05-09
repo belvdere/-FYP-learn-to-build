@@ -1,0 +1,132 @@
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: var(--bg-base);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #323233;
+  color: #cccccc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+  flex-shrink: 0;
+  border-bottom: 1px solid #474747;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.refresh-btn {
+  padding: 8px 16px;
+  background: #0e639c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.refresh-btn:hover {
+  background: #1177bb;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stats span {
+  padding: 4px 12px;
+  background: #3c3c3c;
+  border-radius: 12px;
+}
+
+.app-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 0;
+  background: var(--bg-base);
+}
+
+.app-loading,
+.app-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--bg-base);
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--surface-0);
+  border-top: 4px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.app-loading p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.app-error {
+  color: var(--accent-red);
+}
+
+.app-error h2 {
+  margin: 0 0 12px 0;
+}
+
+.app-error p {
+  margin: 0 0 24px 0;
+  color: var(--text-muted);
+}
+
+.app-error button {
+  padding: 10px 24px;
+  background: var(--accent-blue);
+  color: var(--bg-base);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app-error button:hover {
+  background: var(--accent-lavender);
+}

@@ -1,0 +1,129 @@
+{
+  "name": "build-with-me",
+  "publisher": "buildwithme",
+  "displayName": "Build With Me",
+  "description": "help developers learn while coding with AI",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/belvdere/learn-to-build"
+  },
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fyp.showCommands",
+        "title": "FYP: Show Commands",
+        "icon": "$(menu)"
+      },
+      {
+        "command": "fyp.openIndexPanel",
+        "title": "FYP: Open Index Panel",
+        "icon": "$(database)"
+      },
+      {
+        "command": "fyp.openGraph",
+        "title": "FYP: Open Graph Editor",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "fyp.configureMCP",
+        "title": "FYP: Configure Copilot MCP"
+      },
+      {
+        "command": "fyp.validateMasks",
+        "title": "FYP: Validate Masks"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fyp-sidebar",
+          "title": "FYP Code Learning",
+          "icon": "$(book)"
+        }
+      ]
+    },
+    "views": {
+      "fyp-sidebar": [
+        {
+          "id": "fypIndexStatus",
+          "name": "Index Status"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "fyp.openGraph",
+          "when": "view == fypIndexStatus",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "FYP",
+      "properties": {
+        "fyp.autoStartMCP": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show MCP configuration status for Copilot (Copilot must spawn the MCP server)"
+        },
+        "fyp.autoStartBackend": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start backend API server when extension activates (required for Graph Editor)"
+        },
+        "fyp.backendPort": {
+          "type": "number",
+          "default": 8080,
+          "description": "Port for the backend API server"
+        },
+        "fyp.indexOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Incrementally update the call graph when supported source files are saved."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "build:graph-viz": "cd ../graph-viz && npm run build && mkdir -p ../build-with-me/media/graph-viz && cp -r dist/* ../build-with-me/media/graph-viz/",
+    "compile": "pnpm run build:graph-viz && pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run build:graph-viz && pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "package:vsix": "vsce package --no-dependencies",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.105.0",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.25.10",
+    "eslint": "^9.36.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3"
+  }
+}

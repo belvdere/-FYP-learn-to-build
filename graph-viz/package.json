@@ -1,0 +1,39 @@
+{
+  "name": "graph-viz",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/cytoscape-edgehandles": "^4.0.5",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@types/cytoscape": "^3.21.9",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "ace-builds": "^1.43.5",
+    "axios": "^1.13.5",
+    "cytoscape": "^3.33.1",
+    "cytoscape-dagre": "^2.5.0",
+    "cytoscape-edgehandles": "^4.0.1",
+    "dagre": "^0.8.5",
+    "react": "^19.2.3",
+    "react-ace": "^14.0.1",
+    "react-dom": "^19.2.3",
+    "react-resizable-panels": "^4.0.15"
+  }
+}

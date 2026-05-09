@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "fyp": {
+      "command": "${workspaceFolder}/../server/bin/fypd",
+      "args": ["serve-mcp", "--workspace", "${workspaceFolder}"],
+      "env": {}
+    }
+  }
+}
+

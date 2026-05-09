@@ -1,0 +1,200 @@
+.snapshots-dropdown-container {
+  position: relative;
+}
+
+.snapshots-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  width: 380px;
+  max-height: 400px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.snapshots-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.snapshots-header h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.snapshots-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.snapshots-close-btn:hover {
+  color: var(--text);
+}
+
+.snapshots-list {
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px;
+}
+
+.snapshots-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.snapshot-item {
+  padding: 12px;
+  background: var(--surface-0);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.snapshot-item:last-child {
+  margin-bottom: 0;
+}
+
+.snapshot-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.snapshot-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 13px;
+  flex: 1;
+  margin-right: 8px;
+  word-break: break-word;
+}
+
+.snapshot-id {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--accent-lavender);
+  background: var(--bg-surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.snapshot-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.snapshot-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.snapshot-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.snapshot-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.snapshot-btn-preview {
+  background: var(--bg-surface);
+  color: var(--text);
+  border: 1px solid var(--accent-blue);
+}
+
+.snapshot-btn-preview:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+}
+
+.snapshot-btn-copy {
+  background: var(--accent-blue);
+  color: #ffffff;
+  flex: 1;
+}
+
+.snapshot-btn-copy:hover {
+  background: #1177bb;
+}
+
+.snapshot-btn-copy.copied {
+  background: var(--accent-green);
+}
+
+.snapshot-btn-delete {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.snapshot-btn-delete:hover {
+  background: var(--accent-red);
+  color: #ffffff;
+  border-color: var(--accent-red);
+}
+
+.snapshot-delete-confirm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.snapshot-delete-confirm span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.snapshot-btn-confirm-delete {
+  background: var(--accent-red) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.snapshot-btn-confirm-delete:hover {
+  background: #cc4444 !important;
+}
+
+.snapshot-btn-cancel {
+  background: var(--bg-surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Overlay to close dropdown when clicking outside */
+.snapshots-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}

@@ -1,0 +1,41 @@
+# Node / webview
+node_modules/
+build-with-me/node_modules/
+build-with-me/media/dist/
+build-with-me/dist/
+
+build-with-me/bin/
+build-with-me/prompt-optimizer/
+
+# VS Code
+.vscode/
+
+.env
+server/.env*
+
+
+# Go
+server/bin/
+server/dist/
+server/.cache/
+server/.gocache/
+.gocache/
+
+
+# Mac junk
+.DS_Store
+
+
+# Local index & artifacts
+.fyp/
+
+# Local video demos
+demo/*.mp4
+learn-to-build.mp4
+
+
+.cursor/
+CLAUDE.md
+.claude/
+
+AGENTS.md

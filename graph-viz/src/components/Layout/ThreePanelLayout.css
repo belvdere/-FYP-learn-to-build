@@ -1,0 +1,177 @@
+.three-panel-layout {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Ensure the Group component from react-resizable-panels takes full height */
+.three-panel-layout > div {
+  height: 100% !important;
+}
+
+.panel-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.left-panel {
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+}
+
+.center-panel {
+  background: var(--bg-base);
+  position: relative;
+}
+
+.right-panel {
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-overlay);
+  flex-shrink: 0;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.panel-content {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+}
+
+.collapse-btn {
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.collapse-btn:hover {
+  background: var(--surface-0);
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+.expand-btn {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-overlay);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--accent-lavender);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-btn:hover {
+  background: var(--surface-0);
+  color: var(--accent-blue);
+}
+
+.resize-handle {
+  width: 4px;
+  background: var(--border);
+  cursor: col-resize;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.resize-handle:hover {
+  background: var(--accent-blue);
+}
+
+.resize-handle:active {
+  background: var(--accent-lavender);
+}
+
+.resize-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 40px;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.resize-handle:hover::after {
+  background: rgba(0, 122, 204, 0.1);
+}
+
+/* Expand buttons on center panel edges when side panels are collapsed */
+.expand-edge-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 6px;
+  background: #0e639c;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.expand-edge-btn.left {
+  left: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.expand-edge-btn.right {
+  right: 0;
+  border-radius: 8px 0 0 8px;
+}
+
+.expand-edge-btn:hover {
+  background: #1177bb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.expand-edge-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.expand-edge-btn .expand-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.expand-edge-btn .expand-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
